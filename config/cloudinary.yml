@@ -1,0 +1,18 @@
+development:
+  cloud_name: lopwbwfl3
+  api_key: 676364126779837
+  api_secret: h0_MpucyC32hU1eU6w9-V2O0JSk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: lopwbwfl3
+  api_key: 676364126779837
+  api_secret: h0_MpucyC32hU1eU6w9-V2O0JSk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: lopwbwfl3
+  api_key: 676364126779837
+  api_secret: h0_MpucyC32hU1eU6w9-V2O0JSk
+  enhance_image_tag: true
+  static_image_support: false
