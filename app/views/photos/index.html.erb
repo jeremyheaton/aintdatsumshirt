@@ -1,0 +1,127 @@
+<div class="row">
+	<div class="col-lg-12">
+		<h1>Check out last weeks winners! </h1>
+	</div>
+	<div class="col-lg-4 col-xs-6 thumb">
+		<div class="col-lg-12 designs" >
+			<a class="thumbnail" href="#"> <%= cl_image_tag(@photos[1].image.url, :class => "expand", :width => 277, :height => 250,  :crop => :fill, :gravity => :center, :fetch_format=>:auto, :type=>"fetch") %> </a>
+			<div class="metadata" >
+				<ul class="list-meta list-inline">
+					<li>
+						<i class="fa fa-user"></i> <%= @photos[1].user.try(:username) %>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> 7
+					</li>
+					<li>
+						<i class="fa fa-thumbs-o-up"> </i> <%= @photos[1].votes.count %>
+					</li>
+					<li>
+						<i class="fa fa-commenting"></i> 0
+					</li>
+				</ul>
+			</div>
+			<div class="progress" style="background-color:#d9d9de; height: 10px;">
+				<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
+				aria-valuemin="0" aria-valuemax="100" style="width:80%">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-4 col-xs-6 thumb">
+		<div class="col-lg-12 designs" >
+			<a class="thumbnail" href="#"> <%= cl_image_tag(@photos[1].image.url, :class => "expand", :width => 277, :height => 250,  :crop => :fill, :gravity => :center, :fetch_format=>:auto, :type=>"fetch") %> </a>
+			<div class="metadata" >
+				<ul class="list-meta list-inline">
+					<li>
+						<i class="fa fa-user"></i> <%= @photos[1].user.try(:username) %>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> 7
+					</li>
+					<li>
+						<i class="fa fa-thumbs-o-up"> </i> <%= @photos[1].votes.count %>
+					</li>
+					<li>
+						<i class="fa fa-commenting"></i> 0
+					</li>
+				</ul>
+			</div>
+			<div class="progress" style="background-color:#d9d9de; height: 10px;">
+				<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
+				aria-valuemin="0" aria-valuemax="100" style="width:80%">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-4 col-xs-6 thumb">
+		<div class="col-lg-12 designs" >
+			<a class="thumbnail" href="#"> <%= cl_image_tag(@photos[1].image.url, :class => "expand", :width => 277, :height => 250,  :crop => :fill, :gravity => :center, :fetch_format=>:auto, :type=>"fetch") %> </a>
+			<div class="metadata" >
+				<ul class="list-meta list-inline">
+					<li>
+						<i class="fa fa-user"></i> <%= @photos[1].user.try(:username) %>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> 7
+					</li>
+					<li>
+						<i class="fa fa-thumbs-o-up"> </i> <%= @photos[1].votes.count %>
+					</li>
+					<li>
+						<i class="fa fa-commenting"></i> 0
+					</li>
+				</ul>
+			</div>
+			<div class="progress" style="background-color:#d9d9de; height: 10px;">
+				<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
+				aria-valuemin="0" aria-valuemax="100" style="width:80%">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<!-- for each will go here -->
+	<% if @photos.empty? %>
+	<p>
+		No photos were added yet.
+	</p>
+	<% end %>
+	<% @photos.each do |photo| %>
+	<div class="col-lg-3 col-xs-6 thumb">
+		<div class="col-lg-12 designs" >
+			<a class="thumbnail" href="#"> <%= cl_image_tag(photo.image.url, :class => "expand", :width => 277, :height => 250,  :crop => :fill, :gravity => :center, :fetch_format=>:auto, :type=>"fetch") %> </a>
+			<div class="metadata" >
+				<ul class="list-meta list-inline">
+					<li>
+						<i class="fa fa-user"></i> <%= photo.user.try(:username) %>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> 7
+					</li>
+					<li>
+						<i class="fa fa-thumbs-o-up"> </i> <%= photo.votes.count %>
+					</li>
+					<li>
+						<i class="fa fa-commenting"></i> 0
+					</li>
+				</ul>
+			</div>
+			<div style="background-color:white;">
+				<span class="vote"> </span>
+			</div>
+		</div>
+	</div>
+	<% end %>
+
+</div>
+

@@ -1,0 +1,195 @@
+body {
+	font-family: sans-serif;Helvetica, Arial,
+	color: #333;
+	background-color: #f1f1f1;;
+}
+#posterframe {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+h2 {
+	color: #666;
+	font-size: 16px;
+}
+p {
+	font-size: 14px;
+	line-height: 18px;
+}
+#logo {
+	height: 51px;
+	width: 241px;
+}
+a {
+	color: #0b63b6
+}
+li {
+	display: inline !important;
+}
+.designs {
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+.designs:hover {
+	border: 1px solid #0b63b6;
+}
+.actions {
+	float: right;
+}
+.gallery {
+}
+.list-inline {
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+	text-align: center;
+}
+.upload_link {
+	color: #000;
+	border: 1px solid #aaa;
+	background-color: #e0e0e0;
+	font-size: 18px;
+	padding: 5px 10px;
+	width: 175px;
+	margin: 10px 0 20px 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px;
+}
+.thumbnail {
+	border: 0px solid #ddd !important;
+	margin-bottom: 0px !important;
+	padding: 0px !important;
+	overflow: hidden;
+}
+.photo {
+	float: left;
+}
+.expand:hover {
+	transform: scale(1.25);
+}
+.expand {
+	transition: all 1s ease;
+}
+
+.photo .thumbnail {
+	margin-top: 10px;
+	display: block;
+	max-width: 200px;
+	border: none;
+}
+.toggle_info {
+	margin-top: 10px;
+	font-weight: bold;
+	color: #e62401;
+	display: block;
+}
+.thumbnail_holder {
+	height: 182px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+.info td, .uploaded_info td {
+	font-size: 12px
+}
+.note {
+	margin: 20px 0
+}
+
+.more_info, .show_more_info .less_info {
+	display: none;
+}
+.show_more_info .more_info, .less_info {
+	display: inline-block;
+}
+.inline {
+	display: inline-block;
+}
+td {
+	vertical-align: top;
+	padding-right: 5px;
+}
+
+#backend_upload, #direct_upload {
+	padding: 20px 20px;
+	margin: 20px 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+
+.back_link {
+	font-weight: bold;
+	display: block;
+	font-size: 16px;
+	margin: 10px 0;
+}
+
+form {
+	border: 1px solid #ddd;
+	margin: 15px 0;
+	padding: 15px 0;
+	border-radius: 4px;
+}
+form .form_line {
+	margin-bottom: 20px;
+}
+form .form_controls {
+	margin-left: 180px;
+}
+form label {
+	float: left;
+	width: 160px;
+	padding-top: 3px;
+	text-align: right;
+}
+form .error {
+	color: #c55;
+	margin: 0 10px;
+}
+
+#direct_upload {
+	border: 4px dashed #ccc;
+}
+
+.upload_details {
+	font-size: 12px;
+	margin: 20px;
+	border-top: 1px solid #ccc;
+	word-wrap: break-word;
+}
+.preview {
+	position: relative;
+}
+.preview .delete_by_token {
+	position: absolute;
+	top: 0;
+	left: -12px;
+	text-decoration: none;
+	line-height: 9px;
+	font-size: 12px;
+}
+.vote {
+	display: block;
+	margin: auto;
+	overflow: hidden;
+	width: 40px;
+	height: 25px;
+	cursor: pointer;
+	background: url('http://i.stack.imgur.com/iqN2k.png');
+	background-position: 0 -25px;
+}
+.metadata {
+	border-bottom: 1px solid #dbdbdb;
+	background-color: white;
+	padding-top: 2px;
+}
+.vote.on {
+	background-position: 0 2px;
+}
+.carousel .item img {
+    width: 100%; /*img width*/
+}
