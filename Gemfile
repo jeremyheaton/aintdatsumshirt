@@ -13,9 +13,9 @@ gem 'cloudinary'
 gem 'sprockets-rails'
 gem 'will_paginate', '~> 3.0.5'
 
-# group :assets do
-  # gem 'uglifier', '>= 1.0.3'
-# end
+group :assets do
+  gem 'uglifier', '>= 1.0.3'
+end
 
 # Optional - turbolinks support
 #gem 'turbolinks'
