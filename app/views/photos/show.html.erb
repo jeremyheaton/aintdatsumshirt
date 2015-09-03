@@ -1,0 +1,44 @@
+<div class="col-lg-12">
+	<%= cl_image_tag(@photo.image.url,  :class => "img-responsive show", :width => 1000, :crop => :fit, :type=>"fetch") %>
+
+	<div class="col-md-8">
+
+		<div class="comment-form">
+			<%= simple_form_for [@photo, Comment.new], :remote => true   do |f| %>
+			<div class="field">
+				<%= f.text_area :body, class: "form-control" %>
+			</div>
+			<br>
+			<%= f.submit "Add Comment", class: "btn btn-primary",  :disable_with => "Submitting..." %>
+			<% end %>
+		</div>
+
+		<div id="posts-container">
+			<% @photo.comments.each do |comment| %>
+			<div class="comment">
+				<div class="post-body" style="overflow: hidden;">
+					<header>
+						<span class=""> <span class=""><a> <%= comment.user.username %></a></span> </span>
+						<span class="post-meta"> <span class="bullet time-ago-bullet" aria-hidden="true"></span> <a data-role="relative-time" class="time-ago" ><%= time_ago_in_words(comment.created_at) %></a> </span>
+					</header>
+					<div class="post-body-inner">
+						<div class="post-message-container" data-role="message-container">
+							<div class="publisher-anchor-color" data-role="message-content">
+								<div class="post-message " data-role="message" dir="auto">
+									<p>
+										<%= comment.body %> 
+									</p>
+								</div>
+								<span class="post-media"><ul data-role="post-media-list"></ul></span>
+							</div>
+						</div>
+						<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+					</div>
+				</div>
+			</div>
+			<%end%>
+		</div>
+	</div>
+
+</div>
+</div>

@@ -1,12 +1,15 @@
 require 'digest/sha1'
 class PhotosController < ApplicationController
-
-  before_filter :authenticate_user!, except: [:index]
+  before_action :set_photo, only: [:show]
+  before_filter :authenticate_user!, except: [:index, :show]
   
   def index
     @photos = Photo.order("created_at desc")
   end
 
+  def show
+    
+  end
   def new
     @photo = Photo.new()
   
@@ -14,6 +17,7 @@ class PhotosController < ApplicationController
   end
 
   def create
+    logger.debug params
     @photo = Photo.new(params[:photo])
     @photo.user_id = current_user.id
     # In through-the-server mode, the image is first uploaded to the Rails server.
@@ -42,5 +46,8 @@ class PhotosController < ApplicationController
   def view_for_new
    "new_direct"
   end
+  def set_photo
+      @photo = Photo.find(params[:id])
+    end
 
 end

@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   has_many :votes
   has_many :photos
+  has_many :comments
   # attr_accessible :title, :body
 end

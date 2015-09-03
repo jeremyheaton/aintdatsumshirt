@@ -5,4 +5,5 @@ class Photo < ActiveRecord::Base
   validates_presence_of :title, :image
   has_many :votes
   belongs_to :user
+   has_many :comments
 end
