@@ -1,0 +1,67 @@
+<div class="container gallery">
+	<div class="col-lg-12">
+		<div class="row" style="padding-top:90px;">
+			<div class="profile col-md-4">
+				<h1> <%= @user.username %> </h1>
+				<ul style="list-style-type: none;">
+					<li>
+						<i class="fa fa-facebook-square"></i> facebook info
+					</li>
+					<li>
+						<i class="fa fa-twitter-square"></i> twitter info
+					</li>
+					<li>
+						<i class="fa fa-deviantart"></i> Deviant Art Info
+					</li>
+					<li>
+						<i class="fa fa-home"></i>Deviant Art Info
+					</li>
+				</ul>
+			</div>
+			<div class="profile col-md-8">
+				<h1> Bio </h1>
+				<span> asdfasdflkjasdlfjalsdjflasjfl;aksjdflkj asdfasdflkjasdlfjalsdjflasjfl;aksjdflkjasdfasdflkjasdlfjalsdjflasjfl;aksjdflkjasdfasdflkjasdlfjalsdjflasjfl;aksjdflkj
+					asdfasdflkjasdlfjalsdjflasjfl;aksjdflkjasdfasdflkjasdlfjalsdjflasjfl;aksjdflkjasdfasdflkjasdlfjalsdjflasjfl;aksjdflkj
+					asdfasdflkjasdlfjalsdjflasjfl;aksjdflkjasdfasdflkjasdlfjalsdjflasjfl;aksjdflkjasdfasdflkjasdlfjalsdjflasjfl;aksjdflkj
+					asdfasdflkjasdlfjalsdjflasjfl;aksjdflkjasdfasdflkjasdlfjalsdjflasjfl;aksjdflkjasdfasdflkjasdlfjalsdjflasjfl;aksjdflkj</span>
+
+			</div>
+		</div>
+		<div class="row">
+
+			<!-- for each will go here -->
+			<h1> Current Submissions </h1>
+			<% @user.photos.each do |photo| %>
+			<div class="col-lg-3 col-xs-6 thumb">
+				<div class="col-lg-12 designs" >
+					<%= link_to cl_image_tag(photo.image.url, :class => "expand", :width => 277, :height => 250,  :crop => :fill, :gravity => :center, :fetch_format=>:auto, :type=>"fetch"),
+					{:controller => "photos", :action => "show", :id => photo.id}, :class => "thumbnail" %>
+					<div class="metadata" >
+						<ul class="list-meta list-inline">
+							
+							<li>
+								<i class="fa fa-thumbs-o-up"> </i> <%= photo.votes.count %>
+							</li>
+							<li>
+								<i class="fa fa-commenting"></i> <%= photo.comments.count %>
+							</li>
+						</ul>
+					</div>
+					<div style="background-color:white;">
+						<% if user_signed_in? %>
+						<%	if photo.votes.select{ |u| u.try(:user_id) == current_user.id }.count == 1%>
+						<span id="<%= photo.id %>" class="vote on"> </span>
+						<% else %>
+						<span id="<%= photo.id %>" class="vote"> </span>
+						<%end%>
+						<% else %>
+						<span id="<%= photo.id %>" class="vote"> </span>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+

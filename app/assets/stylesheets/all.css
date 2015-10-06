@@ -25,7 +25,6 @@ a {
 	color: #0b63b6
 }
 li {
-	display: inline !important;
 }
 .designs {
 	padding-right: 0px !important;
@@ -120,7 +119,6 @@ td {
 	border-bottom: 1px solid #ccc;
 }
 
-
 .back_link {
 	font-weight: bold;
 	display: block;
@@ -190,7 +188,29 @@ form .error {
 	background-position: 0 2px;
 }
 .carousel .item img {
-    width: 100% !important; 
+	width: 100% !important;
 }
 
-.show {margin-top: 80px;}
+.show {
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.showbody {
+	text-align: center;
+}
+.commentbody {
+	margin: 0 auto;
+	float: none !important;
+}
+.comment-content {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.login {
+	background-color: transparent !important;
+	border: none !important;
+}
+.img_preview{
+	max-width: 100%;
+}

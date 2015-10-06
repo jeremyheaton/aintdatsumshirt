@@ -10,7 +10,7 @@
 				<div class="publisher-anchor-color" data-role="message-content">
 					<div class="post-message " data-role="message" dir="auto">
 						<p>
-							<%= @comment.body %>
+							<%= h(@comment.body).gsub(/\n/, '<br/>').html_safe %>
 						</p>
 					</div>
 					<span class="post-media"><ul data-role="post-media-list"></ul></span>

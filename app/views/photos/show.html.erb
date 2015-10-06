@@ -1,7 +1,7 @@
-<div class="col-lg-12">
-	<%= cl_image_tag(@photo.image.url,  :class => "img-responsive show", :width => 1000, :crop => :fit, :type=>"fetch") %>
+<div class="col-lg-12 showbody">
+	<%= cl_image_tag(@photo.image.url,  :class => "img-responsive show", :width => 800, :crop => :fit, :type=>"fetch") %>
 
-	<div class="col-md-8">
+	<div class="col-md-8 commentbody">
 
 		<div class="comment-form">
 			<%= simple_form_for [@photo, Comment.new], :remote => true   do |f| %>
@@ -25,8 +25,10 @@
 						<div class="post-message-container" data-role="message-container">
 							<div class="publisher-anchor-color" data-role="message-content">
 								<div class="post-message " data-role="message" dir="auto">
-									<p>
-										<%= comment.body %> 
+									<p class="comment-content">
+										<%= h(comment.body).gsub(/\n/, '
+										<br/>
+										').html_safe %>
 									</p>
 								</div>
 								<span class="post-media"><ul data-role="post-media-list"></ul></span>
